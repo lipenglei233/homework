@@ -7,29 +7,29 @@ public class TwoOne {
 		int yourNum,pcNum;
 		Random r = new Random();
 		HashMap map = new HashMap();
-		map.put(0,"¼ôµ¶");
-		map.put(1,"Ê¯Í·");
-		map.put(2,"²¼");
+		map.put(0,"å‰ªåˆ€");
+		map.put(1,"çŸ³å¤´");
+		map.put(2,"å¸ƒ");
 		
 		while(true) {
 			System.out.println();
-			System.out.println("ÇëÊäÈëÒ»¸ö0~2µÄÊı×Ö");
+			System.out.println("è¯·è¾“å…¥0~2çš„æ•°å­—");
 			yourNum = input.nextInt();
 			if(yourNum < 0 || yourNum > 2) {
-				System.out.println("ÊäÈëÓĞÎó£¬ÇëÖØĞÂÊäÈë");
+				System.out.println("è¾“å…¥å†…å®¹æ— æ•ˆï¼Œè¯·é‡æ–°è¾“å…¥");
 				continue;
 			}else {
 				pcNum = r.nextInt(3);
 				if(yourNum == pcNum) {
-					System.out.println("ÄãÑ¡ÔñÁË£º"+map.get(yourNum)+",µçÄÔÑ¡ÔñÁË£º"+map.get(pcNum)+",Æ½¾Ö");
+					System.out.println("ä½ é€‰æ‹©çš„æ˜¯ï¼š"+map.get(yourNum)+",ç”µè„‘é€‰æ‹©çš„æ˜¯ï¼š"+map.get(pcNum)+",å¹³å±€");
 				}else if(yourNum == 2 && pcNum == 0) {
-					System.out.println("ÄãÑ¡ÔñÁË£º"+map.get(yourNum)+",µçÄÔÑ¡ÔñÁË£º"+map.get(pcNum)+",µçÄÔÊ¤");
+					System.out.println("ä½ é€‰æ‹©çš„æ˜¯ï¼š"+map.get(yourNum)+",ç”µè„‘é€‰æ‹©çš„æ˜¯ï¼š"+map.get(pcNum)+",ç”µè„‘èƒœåˆ©");
 				}else if(yourNum == 0 && pcNum == 2) {
-					System.out.println("ÄãÑ¡ÔñÁË£º"+map.get(yourNum)+",µçÄÔÑ¡ÔñÁË£º"+map.get(pcNum)+",ÄãÊ¤");
+					System.out.println("ä½ é€‰æ‹©çš„æ˜¯ï¼š"+map.get(yourNum)+",ç”µè„‘é€‰æ‹©çš„æ˜¯ï¼š"+map.get(pcNum)+",ä½ èƒœåˆ©");
 				}else if(yourNum > pcNum) {
-					System.out.println("ÄãÑ¡ÔñÁË£º"+map.get(yourNum)+",µçÄÔÑ¡ÔñÁË£º"+map.get(pcNum)+",ÄãÊ¤");
+					System.out.println("ä½ é€‰æ‹©çš„æ˜¯ï¼š"+map.get(yourNum)+",ç”µè„‘é€‰æ‹©çš„æ˜¯ï¼š"+map.get(pcNum)+",ä½ èƒœåˆ©");
 				}else {
-					System.out.println("ÄãÑ¡ÔñÁË£º"+map.get(yourNum)+",µçÄÔÑ¡ÔñÁË£º"+map.get(pcNum)+",µçÄÔÊ¤");
+					System.out.println("ä½ é€‰æ‹©çš„æ˜¯ï¼š"+map.get(yourNum)+",ç”µè„‘é€‰æ‹©çš„æ˜¯ï¼š"+map.get(pcNum)+",ç”µè„‘èƒœåˆ©");
 				}
 			}
 		}
