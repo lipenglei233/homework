@@ -16,6 +16,12 @@ class SolveQuadratic implements Testable{
             double r1 = (b + sqrtDelta) / a;
             double r2 = (b - sqrtDelta) / a;
             System.out.println("root1 = " + r1 + ", root2 = " + r2);
+        }else if(delta == 0){
+            double sqrtDelta = Math.sqrt(delta);
+            double r1 = (b + sqrtDelta) / a;
+            System.out.println("root1 = " + r1);
+        }else{
+            System.out.println("root1 = Null");
         }
     }
 
