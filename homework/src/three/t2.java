@@ -160,11 +160,11 @@ class FindIntegerFactor implements Testable{
 // 这后面的代码不需要修改
 public class t2 {
     public static void main(String[] args) {
-        // Testable[] solutions = {new SolveQuadratic(),
-        //     new RandomMonth(), new ShippingCost(),
-        //         new FindChar(), new StudentMajor(),new FindHighestScore(),
-        // new FindIntegerFactor()};
-        Testable[] solutions = {new FindIntegerFactor()};
+        Testable[] solutions = {new SolveQuadratic(),
+            new RandomMonth(), new ShippingCost(),
+                new FindChar(), new StudentMajor(),new FindHighestScore(),
+        new FindIntegerFactor()};
+        // Testable[] solutions = {new FindIntegerFactor()};
         for (Testable sol: solutions) {
             sol.test();
         }
