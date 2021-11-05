@@ -39,7 +39,7 @@ class SolveQuadratic implements Testable{
 class RandomMonth implements Testable{
     public void getMouth(int m){
         String[] mouth = {"January","February","March","April","May","June","July","August","September","October","November","December"};
-        System.out.println("随机数是：" + m + ",对应的月份是：" + mouth[m + 1]);
+        System.out.println("随机数是：" + m + ",对应的月份是：" + mouth[m - 1]);
     }
 
     @Override
@@ -160,10 +160,11 @@ class FindIntegerFactor implements Testable{
 // 这后面的代码不需要修改
 public class t2 {
     public static void main(String[] args) {
-        Testable[] solutions = {new SolveQuadratic(),
-            new RandomMonth(), new ShippingCost(),
-                new FindChar(), new StudentMajor(),new FindHighestScore(),
-        new FindIntegerFactor()};
+        Testable[] solutions = {new RandomMonth()};
+        // {new SolveQuadratic(),
+        //     new RandomMonth(), new ShippingCost(),
+        //         new FindChar(), new StudentMajor(),new FindHighestScore(),
+        // new FindIntegerFactor()};
         // Testable[] solutions = {new FindIntegerFactor()};
         for (Testable sol: solutions) {
             sol.test();
