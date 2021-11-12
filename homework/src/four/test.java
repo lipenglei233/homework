@@ -5,9 +5,29 @@ import java.util.regex.Matcher;
 
 public class test {
     public static void main(String[] args){
-        String str = "Dkjhhgg";
-        System.out.println(match(str.substring(0,1)));
-        System.out.println(str.replaceFirst(str.substring(0,1), ""));
+        int count = 0;
+        String input = "655flslfsj";
+
+        if(input.length() < 8){
+            System.out.println("密码最少为8位");
+        }
+
+        while(input != ""){
+            if(match(input.substring(0, 1)) == 1){
+                count++;
+            }else if(match(input.substring(0, 1)) == 0){
+                System.out.println("只能包含数字和字母");
+            }
+            
+            input = input.replaceFirst(input.substring(0,1), "");
+            System.out.println(input);
+        }
+
+        if(count >= 2){
+            System.out.println("正确");
+        }else{
+            System.out.println("最少包含两位数字");
+        }
     }
 
     public static int reverse(int number){

@@ -106,7 +106,7 @@ class CheckPassword implements Testable {
             }else if(match(input.substring(0, 1)) == 0){
                 return "只能包含数字和字母";
             }
-            input.replaceFirst(input.substring(0,1), "");
+            input = input.replaceFirst(input.substring(0,1), "");
         }
 
         if(count >= 2){
@@ -148,12 +148,20 @@ class AverageArray implements Testable {
 
     public double average(double[] numbers){
         // 在这里填写代码
-        return 0;
+        double sum = 0;
+        for(int i = 0; i < numbers.length; i++){
+            sum += numbers[i];
+        }
+        return sum / numbers.length;
     }
 
     public int average(int[] numbers){
         // 在这里填写代码
-        return 0;
+        int sum = 0;
+        for(int i = 0; i < numbers.length; i++){
+            sum += numbers[i];
+        }
+        return sum / numbers.length;
     }
 
     @Override
@@ -186,7 +194,7 @@ public class Main {
         //         new AverageArray()
         // };
         Testable[] solutions = {
-            new CheckPassword()
+            new AverageArray()
         };
         for (Testable sol: solutions) {
             sol.test();
