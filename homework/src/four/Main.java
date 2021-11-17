@@ -186,16 +186,16 @@ class AverageArray implements Testable {
 
 public class Main {
     public static void main(String[] args){
-        // Testable[] solutions = {
-        //         new SumOfDigits(),
-        //         new Palindrome(),
-        //         new EstimatePi(),
-        //         new CheckPassword(),
-        //         new AverageArray()
-        // };
         Testable[] solutions = {
-            new AverageArray()
+                new SumOfDigits(),
+                new Palindrome(),
+                new EstimatePi(),
+                new CheckPassword(),
+                new AverageArray()
         };
+        // Testable[] solutions = {
+        //     new AverageArray()
+        // };
         for (Testable sol: solutions) {
             sol.test();
         }
