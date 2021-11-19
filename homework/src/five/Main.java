@@ -213,7 +213,6 @@ class Account implements Testable{
         System.out.println(account.getBalance());
         System.out.println(s);
         System.out.println(account.getCreatedDate());
-
     }
 
 
