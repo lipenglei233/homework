@@ -1,10 +1,9 @@
 package five;
 
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
-
-import javax.print.attribute.SetOfIntegerSyntax;
 
 interface Testable {
     void test();
@@ -115,28 +114,115 @@ class Stopwatch implements Testable{
         System.out.println("------------第3题------------");
         ArrayList<Integer> list = new ArrayList<>();
 
-        for(int i = 0;i < 100000;i++){
-            list.add((int)(Math.random() * 100000 + 1));
+        for(int i = 0;i < 1000000;i++){
+            list.add((int)(Math.random() * 1000000 + 1));
         }
 
         Stopwatch watch = new Stopwatch();
+
         watch.start();
         list.sort(Comparator.naturalOrder());
         watch.stop();
 
+        System.out.println("time is " + watch.getElapsedTime());
         
     }
 
 }
 
-class Account{
+class Account implements Testable{
 // 这里填类定义，包括成员变量和方法
+    int id;
+    double balance;
+    double annualInterestRate;
+    String dateCreated;
+
+    public Account(){
+        this.id = 0;
+        this.balance = 0;
+        this.annualInterestRate = 0;
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+        Date date = new Date(System.currentTimeMillis());
+        this.dateCreated = formatter.format(date);
+    }
+
+    public Account(int id,double balance){
+        this.id = id;
+        this.balance = balance;
+        this.annualInterestRate = 0;
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+        Date date = new Date(System.currentTimeMillis());
+        this.dateCreated = formatter.format(date);
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public double getBalance(){
+        return this.balance;
+    }
+
+    public void setBalance(double balance){
+        this.balance = balance;
+    }
+
+    public double getAnnualInterestRate(){
+        return this.annualInterestRate;
+    }
+
+    public void setAnnualInterestRate(double annualInterestRate){
+        this.annualInterestRate = annualInterestRate;
+    }
+
+    public String getCreatedDate(){
+        return this.dateCreated;
+    }
+
+    public double getMonthlyInterestRate(){
+        return this.annualInterestRate / 12;
+    }
+
+    public double getMonthlyInterest(){
+        return this.annualInterestRate * this.getMonthlyInterestRate();
+    }
+
+    public void withdraw(double value){
+        this.balance = this.balance - value;
+    }
+
+    public void deposit(double value){
+        this.balance = this.balance + value;
+    }
+
+    @Override
+    public void test(){
+        System.out.println("------------第4题------------");
+
+        Account account = new Account(1122,20000);
+
+        account.setAnnualInterestRate(0.045);
+        account.withdraw(2500);
+        account.deposit(3000);
+
+        String s = String.format("%.5f", account.getMonthlyInterest());
+        System.out.println(account.getBalance());
+        System.out.println(s);
+        System.out.println(account.getCreatedDate());
+
+    }
+
+
 }
 
 public class Main {
     public static void main(String[] args){
         Testable[] solutions = {
-            new Rectangle()
+            new Rectangle(),new Stock(),new Stopwatch(),new Account()
         };
 
         for (Testable sol: solutions) {
